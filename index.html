@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arzen Uzundere Menü</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Arzen Uzundere'ye Hoş Geldiniz</h1>
+    </header>
+    <main>
+        <section id="menu">
+            <h2>Menü</h2>
+            <ul id="menu-list">
+                <!-- Menü öğeleri dinamik olarak yüklenecek -->
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Arzen Uzundere</p>
+    </footer>
+    <script>
+        fetch('menu.json')
+            .then(response => response.json())
+            .then(data => {
+                const menuList = document.getElementById('menu-list');
+                const sections = {};
+
+                // Menü öğelerini bölümlere göre grupla
+                data.menu.forEach(item => {
+                    if (!sections[item.section]) {
+                        sections[item.section] = [];
+                    }
+                    sections[item.section].push(item);
+                });
+
+                // Menü bölümlerini oluştur
+                for (const [section, items] of Object.entries(sections)) {
+                    const sectionElement = document.createElement('li');
+                    sectionElement.innerHTML = `<h3>${section}</h3>`;
+                    const itemList = document.createElement('ul');
+                    items.forEach(item => {
+                        const itemElement = document.createElement('li');
+                        itemElement.innerHTML = `
+                            <strong>${item.name}</strong> - ₺${item.price.toFixed(2)}<br>
+                            <small>${item.description}</small>
+                        `;
+                        itemList.appendChild(itemElement);
+                    });
+                    sectionElement.appendChild(itemList);
+                    menuList.appendChild(sectionElement);
+                }
+            })
+            .catch(error => console.error('Menü yüklenirken hata oluştu:', error));
+    </script>
+</body>
+</html>

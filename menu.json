@@ -1,0 +1,58 @@
+{
+    "menu": [
+        {
+            "name": "Kaşarlı Tost",
+            "description": "Izgara ekmek arasında kaşar peyniri.",
+            "price": 40,
+            "section": "Tostlar"
+        },
+        {
+            "name": "Sucuklu Tost",
+            "description": "Izgara ekmek arasında sucuk ve kaşar peyniri.",
+            "price": 60,
+            "section": "Tostlar"
+        },
+        {
+            "name": "Nutella Tost",
+            "description": "Izgara ekmek arasında Nutella çikolata kreması.",
+            "price": 50,
+            "section": "Tostlar"
+        },
+        {
+            "name": "Baklava",
+            "description": "Kat kat yufka arasında ceviz ve şerbet.",
+            "price": 120,
+            "section": "Tatlılar"
+        },
+        {
+            "name": "Sütlaç",
+            "description": "Fırında pişirilmiş sütlü pirinç tatlısı.",
+            "price": 100,
+            "section": "Tatlılar"
+        },
+        {
+            "name": "Tiramisu",
+            "description": "Kahveyle ıslatılmış kedi dili bisküvileri ve mascarpone kreması.",
+            "price": 150,
+            "section": "Tatlılar"
+        },
+        {
+            "name": "Çay",
+            "description": "Taze demlenmiş sıcak çay.",
+            "price": 20,
+            "section": "İçecekler"
+        },
+        {
+            "name": "Kahve",
+            "description": "Sıcak filtre kahve.",
+            "price": 40,
+            "section": "İçecekler"
+        },
+        {
+            "name": "Portakal Suyu",
+            "description": "Taze sıkılmış portakal suyu.",
+            "price": 50,
+            "section": "İçecekler"
+        }
+    ]
+}
